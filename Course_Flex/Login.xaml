@@ -1,0 +1,30 @@
+﻿<Window x:Class="Course_Flex.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Course_Flex"
+        mc:Ignorable="d"
+        Title="Login" Height="450" Width="800" Background="#A3080C">
+    <Grid>
+       
+        <Image Source="Pics/1.jpg" Margin="-11,32,298,91" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="17.197"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <TextBox Margin="455,55,59,315" Name="Login1" MouseDoubleClick="TextBox_MouseDoubleClick" Text="Your Name" FontSize="25" RenderTransformOrigin="0.5,0.5">
+            
+        </TextBox>
+        <Button Content="Login" FontSize="30" Foreground="White" FontWeight="Bold" Background="#A3080C" BorderThickness="0" Margin="455,245,59,73" Click="Button_Click"/>
+
+        <TextBox Margin="455,144,59,226" Name="Pass" MouseDoubleClick="TextBox_MouseDoubleClick_1" Text="Password" FontSize="25" RenderTransformOrigin="0.5,0.5">
+
+        </TextBox>
+    </Grid>
+</Window>

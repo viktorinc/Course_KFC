@@ -1,0 +1,26 @@
+﻿<Window x:Class="Course_Flex.Register"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Course_Flex"
+        mc:Ignorable="d"
+        Title="Register" Height="450" Width="800" Background="#A3080C">
+    <Grid>
+        <TextBox MouseDoubleClick="FName_MouseDown" Name="FName" Text="First Name" FontSize="20" Height="44" Margin="494,10,10,0" VerticalAlignment="Top" />
+        <TextBox MouseDoubleClick="SName_MouseDown" Name="SName" Text="Last Name" FontSize="20" Height="44" Margin="494,82,10,0" VerticalAlignment="Top" />
+        <TextBox MouseDoubleClick="Email_MouseDown" Name="Email" Text="Email Adress" FontSize="20" Height="44" Margin="494,155,10,0" VerticalAlignment="Top" />
+        <Image Source="Pics/1.jpg" Margin="89,39,376,28" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="14.331"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Button Content="Register" FontSize="30" Foreground="White" FontWeight="Bold" Background="#A3080C" BorderThickness="0" Margin="494,308,10,10" Click="Button_Click"/>
+        <TextBox MouseDoubleClick="Password1_MouseDown" Name="Password1" Text="Password" FontSize="20" Height="44" Margin="494,222,10,0" VerticalAlignment="Top" />
+    </Grid>
+</Window>
