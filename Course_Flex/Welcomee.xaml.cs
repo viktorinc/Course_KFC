@@ -22,7 +22,7 @@ namespace Course_Flex
     {
         public MainWindow()
         {
-
+            InitializeComponent();
             
 
         }

@@ -129,7 +129,11 @@
       <Name>Library</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Pics\2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Pics\1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

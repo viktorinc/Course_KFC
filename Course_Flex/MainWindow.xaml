@@ -6,7 +6,97 @@
         xmlns:local="clr-namespace:Course_Flex"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="{x:Type ComboBox}" TargetType="ComboBox">
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled"/>
+            <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+            <Setter Property="MinWidth" Value="120"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBox">
+                        <Grid>
+                            <ToggleButton 
+                    Name="ToggleButton" 
+                    Template="{DynamicResource ComboBoxToggleButton}" 
+                    Grid.Column="2" 
+                    Focusable="false"
+                    IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"
+                    ClickMode="Press">
+                            </ToggleButton>
+                            <ContentPresenter
+                        Name="ContentSite"
+                        IsHitTestVisible="False" 
+                        Content="{TemplateBinding SelectionBoxItem}"
+                        ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                        ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                        Margin="3,3,23,3"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left" />
+                            <TextBox x:Name="PART_EditableTextBox"
+                        Style="{x:Null}" 
+                        Template="{Binding Text}" 
+                        HorizontalAlignment="Left" 
+                        VerticalAlignment="Center"
+                        Margin="3,3,23,3"
+                        Focusable="True" 
+                        Background="Transparent"
+                        Visibility="Visible"
+                        Foreground="DarkBlue"
+                        IsReadOnly="{TemplateBinding IsReadOnly}"/>
+                            <Popup 
+                        Name="Popup"
+                        Placement="Bottom"
+                        IsOpen="{TemplateBinding IsDropDownOpen}"
+                        AllowsTransparency="True" 
+                        Focusable="False"
+                        PopupAnimation="Slide">
+                                <Grid 
+                          Name="DropDown"
+                          SnapsToDevicePixels="True"                
+                          MinWidth="{TemplateBinding ActualWidth}"
+                          MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                    <Border 
+                                x:Name="DropDownBorder"
+                                Background="{DynamicResource TextBoxBrush}"
+                                BorderThickness="1"
+                                BorderBrush="{DynamicResource SolidBorderBrush}"/>
+                                    <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
+                                        <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+                                    </ScrollViewer>
+                                </Grid>
+                            </Popup>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="HasItems" Value="false">
+                                <Setter TargetName="DropDownBorder" Property="MinHeight" Value="95"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="#373737"/>
+                            </Trigger>
+                            <Trigger Property="IsGrouping" Value="true">
+                                <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+                            </Trigger>
+                            <Trigger SourceName="Popup" Property="Popup.AllowsTransparency" Value="true">
+                                <Setter TargetName="DropDownBorder" Property="CornerRadius" Value="0,0,4,4"/>
+                                <Setter TargetName="DropDownBorder" Property="Margin" Value="0"/>
+                            </Trigger>
+                            <Trigger Property="IsEditable"
+           Value="true">
+                                <Setter Property="IsTabStop" Value="false"/>
+                                <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible"/>
+                                <Setter TargetName="ContentSite" Property="Visibility" Value="Hidden"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+                </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition Height="50"/>
@@ -17,15 +107,19 @@
             <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="125"/>
+            <ColumnDefinition Width="125"/>
+            <ColumnDefinition Width="125"/>
+            <ColumnDefinition Width="125"/>
         </Grid.ColumnDefinitions>
-        <Image Source ="Pics/2.jpg" Grid.Column ="0" Grid.ColumnSpan="2" Margin="-26,0,75,62" Grid.RowSpan="3" />
-        <ComboBox Text="Menu" Grid.Column="3" Grid.Row="1" FontSize="25">
-            
+        <Image Source="Pics/2.jpg" Grid.Column ="0" Grid.ColumnSpan="2" Grid.RowSpan="3" Margin="-10,-24,10,50" />
+        <ComboBox   IsEditable="True" IsReadOnly="True" Text="Menu" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Black" Grid.Column="3" Grid.Row="1" Height="35" FontSize="25" Margin="0,8,5,8">
+            <Button Margin="-10,0,0,0" FontWeight="Bold" Background="#C21F3B" Foreground="White" Name="Sand" Content="Sandwiches" FontSize="16" Width="120"/>
+            <Button Margin="-10,0,0,0" FontWeight="Bold" Background="#C21F3B" Foreground="White" Name="Drinks" Content="Drinks" FontSize="17" Width="120"/>
+            <Button Margin="-10,0,0,0" FontWeight="Bold" Background="#C21F3B" Foreground="White" Name="Chicken" Content="Chicken" FontSize="17" Width="120"/>
+            <Button Margin="-10,0,0,0" FontWeight="Bold" Background="#C21F3B" Foreground="White" Name="Dess" Content="Desserts" FontSize="17" Width="120" />
+
         </ComboBox>
-</Grid>
+
+    </Grid>
 </Window>
