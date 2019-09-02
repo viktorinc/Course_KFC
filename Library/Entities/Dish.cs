@@ -19,5 +19,7 @@ namespace Library.Entities
         public string Description { get; set; }
         [Required]
         public string Image_Name { get; set; }
+        [ForeignKey]
+        public int Type_Id { get; set; }
     }
 }
