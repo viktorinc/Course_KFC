@@ -27,12 +27,12 @@ namespace Course_Flex
 
         private void TextBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            Login1.Text = "";
+           
         }
 
         private void TextBox_MouseDoubleClick_1(object sender, MouseButtonEventArgs e)
         {
-            Pass.Text = "";
+            Pass.Password = "";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -43,7 +43,7 @@ namespace Course_Flex
             {
                 if(el.FirstName==Login1.Text)
                 {
-                    if(el.Password==Pass.Text)
+                    if(el.Password==Pass.Password)
                     {
                         MainWindow Mw = new MainWindow();
                         Mw.Show();
@@ -53,6 +53,11 @@ namespace Course_Flex
                 }
             }
 
+        }
+
+        private void Pass_GotFocus(object sender, RoutedEventArgs e)
+        {
+            Login1.Text = "";
         }
     }
 }

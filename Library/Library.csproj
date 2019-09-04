@@ -48,13 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Type.cs" />
     <Compile Include="Entities\Dish.cs" />
     <Compile Include="Entities\EFContext.cs" />
     <Compile Include="Entities\User.cs" />
-    <Compile Include="Migrations\201909021536339_KFC_3.cs" />
-    <Compile Include="Migrations\201909021536339_KFC_3.Designer.cs">
-      <DependentUpon>201909021536339_KFC_3.cs</DependentUpon>
+    <Compile Include="Migrations\201909031515192_KFC_4.cs" />
+    <Compile Include="Migrations\201909031515192_KFC_4.Designer.cs">
+      <DependentUpon>201909031515192_KFC_4.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -64,8 +63,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201909021536339_KFC_3.resx">
-      <DependentUpon>201909021536339_KFC_3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201909031515192_KFC_4.resx">
+      <DependentUpon>201909031515192_KFC_4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

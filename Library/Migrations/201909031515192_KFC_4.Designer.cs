@@ -7,13 +7,13 @@ namespace Library.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class KFC_3 : IMigrationMetadata
+    public sealed partial class KFC_4 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(KFC_3));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(KFC_4));
         
         string IMigrationMetadata.Id
         {
-            get { return "201909021536339_KFC_3"; }
+            get { return "201909031515192_KFC_4"; }
         }
         
         string IMigrationMetadata.Source

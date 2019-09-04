@@ -35,7 +35,7 @@ namespace Course_Flex
                 string First_Name = FName.Text;
                 string Second_Name = SName.Text;
                 string email = Email.Text;
-                string Password = Password1.Text;
+                string Password = Password1.Password;
                 User New_User = new User() { FirstName = First_Name, Email = email, LastName = Second_Name, Password = Password };
                 context.Users.Add(New_User);
                 context.SaveChanges();
@@ -56,7 +56,6 @@ namespace Course_Flex
 
         private void Password1_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Password1.Text = "";
 
         }
 

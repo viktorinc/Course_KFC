@@ -7,10 +7,15 @@
         mc:Ignorable="d"
         Title="Register" Height="450" Width="800" Background="#A3080C">
     <Grid>
-        <TextBox MouseDoubleClick="FName_MouseDown" Name="FName" Text="First Name" FontSize="20" Height="44" Margin="494,10,10,0" VerticalAlignment="Top" />
-        <TextBox MouseDoubleClick="SName_MouseDown" Name="SName" Text="Last Name" FontSize="20" Height="44" Margin="494,82,10,0" VerticalAlignment="Top" />
-        <TextBox MouseDoubleClick="Email_MouseDown" Name="Email" Text="Email Adress" FontSize="20" Height="44" Margin="494,155,10,0" VerticalAlignment="Top" />
-        <Image Source="Pics/1.jpg" Margin="89,39,376,28" RenderTransformOrigin="0.5,0.5">
+        <Label Content="First Name" Foreground="White" FontSize="20" Margin="387,0,263,366"/>
+        <Label Content="Last Name" Foreground="White" FontSize="20" Margin="387,80,273,270"/>
+        <Label Content="Email" Foreground="White" FontSize="20" Margin="387,155,269,211"/>
+        <TextBlock Margin="393,225,303,161" Text="Password" Foreground="White" FontSize="20"/>
+
+        <TextBox MouseDoubleClick="FName_MouseDown" Name="FName"  FontSize="20" Height="44" Margin="494,10,10,0" VerticalAlignment="Top" />
+        <TextBox MouseDoubleClick="SName_MouseDown" Name="SName"  FontSize="20" Height="44" Margin="494,82,10,0" VerticalAlignment="Top" />
+        <TextBox MouseDoubleClick="Email_MouseDown" Name="Email"  FontSize="20" Height="44" Margin="494,155,10,0" VerticalAlignment="Top" />
+        <Image Source="Pics/1.jpg" Margin="43,43,422,24" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -21,6 +26,6 @@
             </Image.RenderTransform>
         </Image>
         <Button Content="Register" FontSize="30" Foreground="White" FontWeight="Bold" Background="#A3080C" BorderThickness="0" Margin="494,308,10,10" Click="Button_Click"/>
-        <TextBox MouseDoubleClick="Password1_MouseDown" Name="Password1" Text="Password" FontSize="20" Height="44" Margin="494,222,10,0" VerticalAlignment="Top" />
+        <PasswordBox Name="Password1" Margin="494,225,10,151"/>
     </Grid>
 </Window>

@@ -7,8 +7,10 @@
         mc:Ignorable="d"
         Title="Login" Height="450" Width="800" Background="#A3080C">
     <Grid>
-       
-        <Image Source="Pics/1.jpg" Margin="-11,32,298,91" RenderTransformOrigin="0.5,0.5">
+
+        <Label Content="Your Name" FontSize="20" Foreground="White" Margin="310,58,337,308"/>
+        <Label Content="Password" FontSize="20" Foreground="White" Margin="310,140,337,226"/>
+        <Image Source="Pics/1.jpg" Margin="-19,77,464,63" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -18,13 +20,12 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <TextBox Margin="455,55,59,315" Name="Login1" MouseDoubleClick="TextBox_MouseDoubleClick" Text="Your Name" FontSize="25" RenderTransformOrigin="0.5,0.5">
+        <TextBox Margin="455,55,59,315" Name="Login1" MouseDoubleClick="TextBox_MouseDoubleClick"  FontSize="25" RenderTransformOrigin="0.5,0.5">
             
         </TextBox>
         <Button Content="Login" FontSize="30" Foreground="White" FontWeight="Bold" Background="#A3080C" BorderThickness="0" Margin="455,245,59,73" Click="Button_Click"/>
 
-        <TextBox Margin="455,144,59,226" Name="Pass" MouseDoubleClick="TextBox_MouseDoubleClick_1" Text="Password" FontSize="25" RenderTransformOrigin="0.5,0.5">
-
-        </TextBox>
+     
+        <PasswordBox Name="Pass" Width="300" Height="50"  Margin="455,144,59,226" HorizontalAlignment="Left" VerticalAlignment="Top"/>
     </Grid>
 </Window>
